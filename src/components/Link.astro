@@ -1,5 +1,19 @@
 ---
-// Henter parametrene fra Astro.props
-const { href="#", target="_self"} = Astro.props; 
+interface Props {
+  href: string;
+  img: string;
+  alt: string;
+  target?: string;
+}
+
+const { href, img, alt, target = "_blank" } = Astro.props;
 ---
-<a href={href} class="underline" target={target}><slot /></a>
+
+<a href={href} target={target} rel="noopener noreferrer">
+  <img 
+  src={img} 
+  alt={alt} 
+  class="w-20 h-20 hover:scale-110 hover:shadow-[0px_0px_18px_6px_rgba(255,252,245,1)] transition-all" 
+/>
+</a>
+    

@@ -1,33 +1,39 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import Button2 from '../components/Button2.astro';
 ---
 
 <MainLayout title="Titel">
-  <!-- Hero -->
-  <section class="flex items-center justify-center min-h-screen">
+  
+  <section class="min-h-screen flex items-center justify-center">
     <div class="text-center">
-      <h1 class="text-5xl font-bold">Kiana</h1>
-      <h1 class="text-5xl font-bold">DellaGatta</h1>
-      <h3 class="mt-2 text-lg italic">
+      <h1 class="font-display text-8xl md:text-9xl font-bold text-red-800">Kiana</h1>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-red-800">DellaGatta</h1>
+      <h3 class="mt-2 font-sans text-lg md:text-2xl">
         "Hire me before my cats give me a full-time job"
       </h3>
       <img
         src="/src/assets/images/kianasdesktop.png"
         alt="Kiana"
-        class="mx-auto mt-6"
+        class="mx-auto"
       />
     </div>
   </section>
 
-  <!-- About -->
-  <section class="container bg-blue-300 grid grid-cols-1 md:grid-cols-2">
-    <div>
-      <h2>About</h2>
-      <p>
+  
+  <section class="w-full min-h-screen grid grid-cols-1 bg-blue-300 lg:grid-cols-2">
+    
+    <div class="p-8 pb-70 lg:mt-30">
+      <img
+        src="src/assets/images/pappper.png"
+        alt="aura background"
+        class="absolute left-0 top-250 -translate-y-1/2 z-0 w-[550px] pointer-events-none select-none lg:top-300 lg:w-[640px]"
+      />
+      <h2 class="relative z-10 mb-4 pl-8 font-display text-5xl font-semibold text-red-800 lg:text-7xl">
+        About
+      </h2>
+      <p class="relative z-10 pl-8 w-full max-w-120 font-sans text-xl lg:max-w-140 lg:text-2xl">
         Hi, my name is Kiana Della Gatta and I’m currently in my third semester
         of Multimedia Design at EK. I was born in Hawaii, but grew up in Denmark
         — a mix that, along with my Danish, Italian, and American roots, has
@@ -40,23 +46,37 @@ import thumbsup from "../assets/images/thumbsup.png";
         ideas into engaging, visual stories.
       </p>
     </div>
-
-    <div>
-      <img src="/src/assets/images/kianaandfiggy.png" alt="Kiana and Figgy" />
-      <button></button>
+  
+    
+    <div class="relative mb-50 grid grid-rows-3 bg-pink-300">
+      
+      <img
+        src="src/assets/images/kianaandfiggy.png"
+        alt="aura background"
+        class="absolute right-0 top-4 -translate-y-1/2 z-0 w-[500px] pointer-events-none select-none lg:top-1/2 lg:w-[550px]"
+      />
+  
+      <div></div>
+      <div class="relative z-10 grid place-items-end pr-8">
+        <Button2 />
+      </div>
+      <div></div>
     </div>
   </section>
 
+  <section class="bg-orange-300 px-6 py-12 text-center">
+    <h2 class="mb-10 font-display text-5xl font-semibold text-red-800 md:text-7xl">Skills</h2>
   
-  <section>
-    <div></div>
-  </section>
-
+    <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
+      <Button name="Figma" />
+      <Button name="Adobe" />
+      <Button name="Canva" />
   
-  <section>
-    <div>
-      <h2>Skills</h2>
+      
+      <div class="md:col-span-3 flex flex-col justify-center gap-6 md:flex-row">
+        <Button name="UX/UI" />
+        <Button name="Meow" />
+      </div>
     </div>
-    <div></div>
   </section>
 </MainLayout>
