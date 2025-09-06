@@ -1,5 +1,48 @@
 ---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+<header x-data="{ showmenu: false }" class="">
+  <div id="navbar" class="container mx-auto p-4 flex flex-row justify-center items-center">
+    <!-- Desktop Menu -->
+    <nav id="desktopmenu" class="hidden lg:block w-full">
+      <ul class="flex flex-row justify-evenly w-full gap-40">
+        <li>
+          <a href="/about" 
+             class="font-serif text-3xl hover:text-red-800 hover:[text-shadow:0_0_10px_rgba(255,0,0,0.8),0_0_20px_rgba(255,0,0,0.6)]">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="/skills" 
+             class="font-serif text-3xl hover:text-red-800 hover:[text-shadow:0_0_10px_rgba(255,0,0,0.8),0_0_20px_rgba(255,0,0,0.6)]">
+            Skills
+          </a>
+        </li>
+        <li>
+          <a href="/contact" 
+             class="font-serif text-3xl hover:text-red-800 hover:[text-shadow:0_0_10px_rgba(255,0,0,0.8),0_0_20px_rgba(255,0,0,0.6)]">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Burger Menu Button (mobile only) -->
+    <button id="burgermenu" class="lg:hidden absolute right-4" x-on:click="showmenu = ! showmenu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobilmenu" class="flex flex-col content-center"
+    x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+    <ul class="border-t-2 border-b-2 border-black">
+      <li class="text-center py-2"><a href="/about" class="font-serif">About</a></li>
+      <li class="text-center py-2"><a href="/skills" class="font-serif">Skills</a></li>
+      <li class="text-center py-2"><a href="/contact" class="font-serif">Contact</a></li>
+    </ul>
+  </nav>
+</header>

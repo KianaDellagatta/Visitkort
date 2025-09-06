@@ -2,10 +2,10 @@
 import Link from "./Link.astro";
 ---
 
-<footer class="bg-[url(src/assets/images/footerbackground.png)] bg-cover bg-center min-h-[50vh] flex flex-col items-center justify-center text-center p-8">
+<footer class="relative bg-[url(src/assets/images/footerbackground.png)] bg-cover bg-center min-h-[50vh] flex flex-col items-center justify-center text-center p-8">
   <h2 class="mb-8 font-display font-semibold text-5xl md:text-7xl">Contact Me</h2>
   
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center relative z-10">
     <Link 
       href="https://www.instagram.com/yourprofile" 
       img="src/assets/images/Insta.png" 
@@ -25,5 +25,19 @@ import Link from "./Link.astro";
       target="_self"  
     />
   </div>
+
+  <!-- Left image (hidden on mobile) -->
+  <img 
+    src="src/assets/images/kittens.png" 
+    alt="Left decoration" 
+    class="hidden md:block absolute left-0 bottom-0 w-64 lg:w-80"
+  />
+
+  <!-- Right image (always visible) -->
+  <img 
+    src="src/assets/images/figgy.png" 
+    alt="Right decoration" 
+    class="block absolute right-0 bottom-0 w-70 lg:w-90"
+  />
 </footer>
   

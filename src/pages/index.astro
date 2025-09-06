@@ -5,24 +5,29 @@ import Button2 from '../components/Button2.astro';
 ---
 
 <MainLayout title="Titel">
-  
   <section class="min-h-screen flex items-center justify-center">
     <div class="text-center">
-      <h1 class="font-display text-8xl md:text-9xl font-bold text-red-800">Kiana</h1>
-      <h1 class="font-display text-5xl md:text-7xl font-bold text-red-800">DellaGatta</h1>
-      <h3 class="mt-2 font-sans text-lg md:text-2xl">
+      <h1 class=" pt-10 font-display text-8xl md:text-9xl font-bold text-red-800 leading-none">
+        Kiana
+      </h1>
+      <h1 class=" pb-2 font-display text-5xl md:text-7xl font-bold text-red-800 leading-none">
+        DellaGatta
+      </h1>
+      <h3 class="font-sans text-lg md:text-2xl leading-tight">
         "Hire me before my cats give me a full-time job"
       </h3>
       <img
         src="/src/assets/images/kianasdesktop.png"
         alt="Kiana"
-        class="mx-auto"
+        class="mx-auto -mt-0 lg:-mt-34"
       />
     </div>
   </section>
+  
+
 
   
-  <section class="w-full min-h-screen grid grid-cols-1 bg-blue-300 lg:grid-cols-2">
+  <section class="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2">
     
     <div class="p-8 pb-70 lg:mt-30">
       <img
@@ -48,7 +53,7 @@ import Button2 from '../components/Button2.astro';
     </div>
   
     
-    <div class="relative mb-50 grid grid-rows-3 bg-pink-300">
+    <div class="relative mb-50 grid grid-rows-3">
       
       <img
         src="src/assets/images/kianaandfiggy.png"
@@ -64,7 +69,7 @@ import Button2 from '../components/Button2.astro';
     </div>
   </section>
 
-  <section class="bg-orange-300 px-6 py-12 text-center">
+  <section class=" px-6 py-12 text-center pb-40">
     <h2 class="mb-10 font-display text-5xl font-semibold text-red-800 md:text-7xl">Skills</h2>
   
     <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
