@@ -5,12 +5,23 @@ import Button2 from '../components/Button2.astro';
 ---
 
 <MainLayout title="Titel">
-  <section class="min-h-screen flex items-center justify-center">
+  <!-- Hero -->
+  <section id="top" class="min-h-screen flex items-center justify-center">
     <div class="text-center">
-      <h1 class=" pt-10 font-display text-8xl md:text-9xl font-bold text-red-800 leading-none">
+      <h1 class="relative pt-10 font-display text-8xl md:text-9xl font-bold text-secondary leading-none inline-block">
+        <!-- SVG icon -->
+        <img 
+          src="src/assets/images/7.svg" 
+          alt="icon" 
+          class="
+            absolute
+            right-63 -top-0 w-14 h-14
+            md:right-87 md:-top-0 md:w-20 md:h-20 md:left-auto animate-pulse animate-infinite
+          "
+        />
         Kiana
       </h1>
-      <h1 class=" pb-2 font-display text-5xl md:text-7xl font-bold text-red-800 leading-none">
+      <h1 class="pb-2 font-display text-5xl md:text-7xl font-bold text-secondary leading-none">
         DellaGatta
       </h1>
       <h3 class="font-sans text-lg md:text-2xl leading-tight">
@@ -19,23 +30,20 @@ import Button2 from '../components/Button2.astro';
       <img
         src="/src/assets/images/kianasdesktop.png"
         alt="Kiana"
-        class="mx-auto -mt-0 lg:-mt-34"
+        class="mx-auto -mt-0 lg:-mt-34 bounce-in-top"
       />
     </div>
   </section>
-  
 
-
-  
-  <section class="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2">
-    
+  <!-- About -->
+  <section id="about" class="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2 scroll-mt-28">
     <div class="p-8 pb-70 lg:mt-30">
       <img
         src="src/assets/images/pappper.png"
         alt="aura background"
         class="absolute left-0 top-250 -translate-y-1/2 z-0 w-[550px] pointer-events-none select-none lg:top-300 lg:w-[640px]"
       />
-      <h2 class="relative z-10 mb-4 pl-8 font-display text-5xl font-semibold text-red-800 lg:text-7xl">
+      <h2 class="relative z-10 mb-4 pl-8 font-display text-5xl font-semibold text-secondary lg:text-7xl">
         About
       </h2>
       <p class="relative z-10 pl-8 w-full max-w-120 font-sans text-xl lg:max-w-140 lg:text-2xl">
@@ -52,15 +60,12 @@ import Button2 from '../components/Button2.astro';
       </p>
     </div>
   
-    
     <div class="relative mb-50 grid grid-rows-3">
-      
       <img
         src="src/assets/images/kianaandfiggy.png"
         alt="aura background"
         class="absolute right-0 top-4 -translate-y-1/2 z-0 w-[500px] pointer-events-none select-none lg:top-1/2 lg:w-[550px]"
       />
-  
       <div></div>
       <div class="relative z-10 grid place-items-end pr-8">
         <Button2 />
@@ -69,15 +74,15 @@ import Button2 from '../components/Button2.astro';
     </div>
   </section>
 
-  <section class=" px-6 py-12 text-center pb-40">
-    <h2 class="mb-10 font-display text-5xl font-semibold text-red-800 md:text-7xl">Skills</h2>
+  <!-- Skills -->
+  <section id="skills" class="px-6 py-12 text-center pb-40 scroll-mt-28">
+    <h2 class="mb-10 font-display text-5xl font-semibold text-secondary md:text-7xl">Skills</h2>
   
     <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
       <Button name="Figma" />
       <Button name="Adobe" />
       <Button name="Canva" />
   
-      
       <div class="md:col-span-3 flex flex-col justify-center gap-6 md:flex-row">
         <Button name="UX/UI" />
         <Button name="Meow" />
